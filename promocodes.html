@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>隐私政策</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --text: #1a1a1a;
+      --muted: #666;
+      --line: #ddd;
+      --bg: #fff;
+      --btn-bg: rgba(120, 120, 128, 0.16);
+      --btn-text: #007aff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f2f2f2;
+        --muted: #aaa;
+        --line: #444;
+        --bg: #000;
+        --btn-bg: rgba(120, 120, 128, 0.24);
+        --btn-text: #0a84ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+      margin: 0;
+      padding: 52px 18px 32px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+    body.lang-en {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+    #langToggle {
+      position: fixed;
+      top: max(10px, env(safe-area-inset-top, 10px));
+      right: max(12px, env(safe-area-inset-right, 12px));
+      z-index: 100;
+      margin: 0;
+      padding: 8px 14px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--btn-text);
+      background: var(--btn-bg);
+      border: none;
+      border-radius: 999px;
+      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
+    }
+    #langToggle:active {
+      opacity: 0.65;
+    }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .updated { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 22px 0 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+    h2:first-of-type { border-top: none; padding-top: 0; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0 0 12px; padding-left: 1.2em; }
+    li { margin-bottom: 6px; }
+    .note {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+  <button type="button" id="langToggle" aria-label="Switch language">English</button>
 
+  <div id="panel-zh" class="panel active" lang="zh-Hans">
+    <h1>隐私政策</h1>
+    <p class="updated">更新日期：2026 年 4 月 23 日</p>
+
+    <p>欢迎使用本应用（下称「本 App」）。我们重视你的隐私。本政策说明本 App 如何收集、使用与存储与你的相关的信息。</p>
+
+    <h2>一、我们处理哪些信息</h2>
+    <p>本 App 主要用于在本地管理 App Store 兑换码及关联的应用信息。可能涉及的信息包括：</p>
+    <ul>
+      <li><strong>你主动输入或粘贴的内容</strong>：例如 App Store 应用链接或 App ID、兑换码文本、你通过「联系或反馈」发送的邮件主题与正文（由系统邮件 App 处理）。</li>
+      <li><strong>为展示应用而获取的公开元数据</strong>：当你通过 App Store 链接添加应用时，本 App 会向 Apple 的公开接口请求该应用的名称、图标地址等，用于在列表中展示。</li>
+      <li><strong>设备本地存储</strong>：上述应用信息与兑换码会保存在本机「文件」沙盒内的 plist 文件中，仅用于在本 App 内展示与管理。</li>
+    </ul>
+
+    <h2>二、信息如何存储</h2>
+    <p>你的应用列表与兑换码数据<strong>仅存储在你的设备上</strong>，不会由我们运营的服务器进行集中收集或备份。卸载本 App 或删除相关数据后，除非设备系统另有缓存机制，否则上述本地数据将随之移除。</p>
+
+    <h2>三、网络与第三方</h2>
+    <ul>
+      <li>为解析并展示应用信息，本 App 会访问 Apple 提供的公开网络接口（如 iTunes Search / Lookup）。该过程遵循 Apple 相关服务条款。</li>
+      <li>当你使用系统「分享」功能时，由 iOS 与你选择的第三方应用按其各自隐私政策处理分享内容，本 App 无法控制第三方行为。</li>
+    </ul>
+
+    <h2>四、权限说明</h2>
+    <p>本 App 不强制要求通讯录、相册、定位等敏感权限即可使用核心功能。若未来版本因功能需要申请额外权限，我们将在使用前向你说明用途。</p>
+
+    <h2>五、未成年人</h2>
+    <p>若你为未成年人，请在监护人指导下阅读本政策并使用本 App。</p>
+
+    <h2>六、政策更新</h2>
+    <p>我们可能适时修订本政策。更新后的版本将通过本 App 内展示，请你定期查阅。</p>
+
+    <h2>七、联系我们</h2>
+    <p>如对本政策有任何疑问，可通过本 App「设置」中的「联系或反馈」与我们取得联系。</p>
+
+    <p class="note">本政策仅适用于本 App。使用 App Store、微信等第三方服务时，请同时阅读相应平台的隐私政策。</p>
+  </div>
+
+  <div id="panel-en" class="panel" lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: April 23, 2026</p>
+
+    <p>Welcome to this app (“the App”). We respect your privacy. This policy explains how the App collects, uses, and stores information related to you.</p>
+
+    <h2>1. Information we process</h2>
+    <p>The App is designed to help you manage App Store promo codes and related app information on your device. This may include:</p>
+    <ul>
+      <li><strong>Information you enter or paste</strong>, such as App Store links or app IDs, promo code text, and the subject/body of email you send through “Contact or feedback” (handled by the system Mail app).</li>
+      <li><strong>Public metadata for display</strong>: When you add an app via an App Store link, the App requests publicly available details from Apple (e.g. app name and artwork URL) to show in your list.</li>
+      <li><strong>On-device storage</strong>: The above app records and promo codes are saved in a plist file inside the app’s Documents sandbox, solely for display and management inside the App.</li>
+    </ul>
+
+    <h2>2. How information is stored</h2>
+    <p>Your app list and promo codes are <strong>stored only on your device</strong>. We do not operate a central server that collects or backs up this data. If you uninstall the App or delete this data, local copies are removed except where the operating system may retain its own caches.</p>
+
+    <h2>3. Network and third parties</h2>
+    <ul>
+      <li>To resolve and display app information, the App uses Apple’s public network APIs (such as iTunes Search / Lookup), subject to Apple’s applicable terms.</li>
+      <li>When you use the system Share feature, iOS and the third-party app you choose process the shared content under their own privacy policies. The App does not control those services.</li>
+    </ul>
+
+    <h2>4. Permissions</h2>
+    <p>Core features do not require sensitive permissions such as contacts, photo library, or location. If a future version needs additional permissions, we will explain the purpose before use.</p>
+
+    <h2>5. Minors</h2>
+    <p>If you are a minor, please read this policy and use the App with guidance from a parent or guardian.</p>
+
+    <h2>6. Changes to this policy</h2>
+    <p>We may update this policy from time to time. The updated version will be shown inside the App; please review it periodically.</p>
+
+    <h2>7. Contact us</h2>
+    <p>If you have questions about this policy, you can reach us through “Contact or feedback” in the App’s Settings.</p>
+
+    <p class="note">This policy applies only to the App. When you use the App Store, WeChat, or other third-party services, please also read those platforms’ privacy policies.</p>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = 'privacyPolicyLang';
+      var btn = document.getElementById('langToggle');
+      var panelZh = document.getElementById('panel-zh');
+      var panelEn = document.getElementById('panel-en');
+      var doc = document.documentElement;
+      var body = document.body;
+
+      function applyLang(lang) {
+        var isEn = lang === 'en';
+        panelZh.classList.toggle('active', !isEn);
+        panelEn.classList.toggle('active', isEn);
+        btn.textContent = isEn ? '中文' : 'English';
+        btn.setAttribute('aria-label', isEn ? '切换到中文' : 'Switch to English');
+        doc.lang = isEn ? 'en' : 'zh-Hans';
+        document.title = isEn ? 'Privacy Policy' : '隐私政策';
+        body.classList.toggle('lang-en', isEn);
+        try {
+          localStorage.setItem(KEY, lang);
+        } catch (e) {}
+      }
+
+      function readStored() {
+        try {
+          return localStorage.getItem(KEY);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      var initial = readStored();
+      if (initial === 'en' || initial === 'zh') {
+        applyLang(initial);
+      }
+
+      btn.addEventListener('click', function () {
+        var next = panelEn.classList.contains('active') ? 'zh' : 'en';
+        applyLang(next);
+      });
+    })();
+  </script>
+</body>
+</html>
