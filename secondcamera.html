@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --text: #1c1c1e;
+      --secondary: #636366;
+      --background: #ffffff;
+      --card: #f2f2f7;
+      --accent: #007aff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f2f2f7;
+        --secondary: #aeaeb2;
+        --background: #000000;
+        --card: #1c1c1e;
+        --accent: #0a84ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: max(20px, env(safe-area-inset-top)) 20px max(28px, env(safe-area-inset-bottom));
+      font: -apple-system-body;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--text);
+      background: var(--background);
+      -webkit-text-size-adjust: 100%;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+    .updated {
+      color: var(--secondary);
+      font-size: 15px;
+      margin: 0 0 24px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 28px 0 10px;
+    }
+    p { margin: 0 0 14px; }
+    ul {
+      margin: 0 0 14px;
+      padding-left: 1.25em;
+    }
+    li { margin-bottom: 8px; }
+    .about {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 8px;
+    }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+  <article id="en" class="lang-content" data-lang="en">
+    <h1>Second Camera Privacy Policy</h1>
+    <p class="updated">Last updated: May 25, 2026</p>
+    <div class="about">
+      <p><strong>About Second Camera</strong></p>
+      <p>Second Camera is a separate library on your device. It works alongside the system Camera and Photos apps: you can keep selected photos and videos here without mixing them into your main camera roll.</p>
+    </div>
+    <h2>1. Information We Collect</h2>
+    <p>We store photos and videos you capture or import only on your device. We do not upload your media to our servers.</p>
+    <h2>2. Permissions</h2>
+    <ul>
+      <li><strong>Camera</strong> — capture photos and videos for this separate library.</li>
+      <li><strong>Microphone</strong> — record audio while filming video.</li>
+      <li><strong>Photo Library</strong> — import from the system library, save back when you choose, and share through the system share sheet.</li>
+    </ul>
+    <h2>3. Data Storage</h2>
+    <p>Media is saved in the app’s Documents folder. You can view local storage usage and counts in Settings.</p>
+    <h2>4. Third-Party Sharing</h2>
+    <p>When you share content, it is handled by the iOS share sheet and the app you choose.</p>
+    <h2>5. Contact</h2>
+    <p>If you have questions, contact us through the App Store product page.</p>
+  </article>
+
+  <article id="zh-Hans" class="lang-content" data-lang="zh-Hans">
+    <h1>第二相机 隐私政策</h1>
+    <p class="updated">更新日期：2026年5月25日</p>
+    <div class="about">
+      <p><strong>关于第二相机</strong></p>
+      <p>第二相机是设备上的独立图库，与系统「相机」「照片」配合使用：你可以把部分照片和视频单独存放在这里，而不必全部放进系统相册。</p>
+    </div>
+    <h2>1. 信息收集</h2>
+    <p>你拍摄或导入的内容仅保存在本机，我们不会将媒体上传至服务器。</p>
+    <h2>2. 权限使用</h2>
+    <ul>
+      <li><strong>相机</strong> — 拍摄照片与录像，保存到独立图库。</li>
+      <li><strong>麦克风</strong> — 录像时采集声音。</li>
+      <li><strong>相册</strong> — 从系统相册导入、按需保存回系统相册，以及通过系统分享面板分享。</li>
+    </ul>
+    <h2>3. 数据存储</h2>
+    <p>内容保存在应用 Documents 目录。可在设置页查看本地占用与数量。</p>
+    <h2>4. 第三方分享</h2>
+    <p>分享时由 iOS 系统分享面板及你所选应用处理。</p>
+    <h2>5. 联系我们</h2>
+    <p>如有疑问，请通过 App Store 产品页面与我们联系。</p>
+  </article>
+
+  <script>
+    function applyLanguage(lang) {
+      var code = (lang === "zh" || lang === "zh-Hans" || lang === "zh-CN") ? "zh-Hans" : "en";
+      document.querySelectorAll(".lang-content").forEach(function (el) {
+        el.classList.toggle("active", el.getAttribute("data-lang") === code);
+      });
+      document.documentElement.lang = code;
+      var active = document.getElementById(code);
+      document.title = active ? active.querySelector("h1").textContent : "Privacy Policy";
+    }
+    applyLanguage("en");
+  </script>
+</body>
+</html>
