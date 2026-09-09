@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>隐私政策 / Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --text: #1c1c1e;
+      --secondary: #6c6c70;
+      --accent: #1ab87a;
+      --rule: rgba(60, 60, 67, 0.16);
+      --bg: #ffffff;
+      --chip: rgba(120, 120, 128, 0.12);
+      --chip-on: rgba(26, 184, 122, 0.18);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f2f2f7;
+        --secondary: #98989f;
+        --rule: rgba(84, 84, 88, 0.55);
+        --bg: #000000;
+        --chip: rgba(120, 120, 128, 0.28);
+        --chip-on: rgba(26, 184, 122, 0.28);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: -apple-system-body;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+      line-height: 1.55;
+      -webkit-text-size-adjust: 100%;
+    }
+    .lang-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 12px 18px 8px;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .lang-bar button {
+      appearance: none;
+      border: 0;
+      margin: 0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary);
+      background: var(--chip);
+      cursor: pointer;
+    }
+    .lang-bar button[aria-pressed="true"] {
+      color: var(--accent);
+      background: var(--chip-on);
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 16px 18px 48px;
+    }
+    h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+    .meta {
+      color: var(--secondary);
+      font-size: 0.92rem;
+      margin-bottom: 22px;
+    }
+    h2 {
+      font-size: 1.08rem;
+      font-weight: 650;
+      margin: 26px 0 8px;
+      color: var(--accent);
+    }
+    p, li {
+      font-size: 0.98rem;
+      margin: 0 0 10px;
+    }
+    ul {
+      margin: 0 0 12px;
+      padding-left: 1.2em;
+    }
+    li { margin-bottom: 6px; }
+    .brand {
+      font-weight: 700;
+      color: var(--accent);
+    }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="lang-bar" role="group" aria-label="Language">
+    <button type="button" id="btn-zh" data-lang="zh-Hans">中文</button>
+    <button type="button" id="btn-en" data-lang="en">English</button>
+  </div>
+
+  <main>
+    <article id="zh" lang="zh-Hans" hidden>
+      <h1>隐私政策</h1>
+      <p class="meta">更新日期：2026 年 9 月 2 日 · 适用于 <span class="brand">日行</span>（Waynote）</p>
+
+      <p>欢迎使用日行。我们重视你的隐私。本政策说明本应用如何收集、使用与存储与你相关的信息。日行以本地记录骑行为核心，默认不要求你创建账号。</p>
+
+      <h2>1. 我们收集的信息</h2>
+      <p>仅在你使用相关功能时，应用可能会在设备本地处理以下信息：</p>
+      <ul>
+        <li><strong>位置信息</strong>：用于记录骑行轨迹、地图显示与后台持续记录（在你授予「始终」定位权限时）。</li>
+        <li><strong>相机与照片</strong>：用于骑行中拍照，照片保存在本机应用沙盒。</li>
+        <li><strong>麦克风与录音</strong>：用于按住说话录音，音频保存在本机。</li>
+        <li><strong>运动与行程数据</strong>：如轨迹点、距离、时长、海拔、导出视频等，均保存在本机。</li>
+        <li><strong>设置偏好</strong>：如地图样式、语言、语音教练开关等，保存在本机。</li>
+      </ul>
+
+      <h2>2. 信息如何使用</h2>
+      <ul>
+        <li>提供骑行记录、地图展示、语音播报与行程回顾；</li>
+        <li>在你主动操作时生成并分享骑行视频；</li>
+        <li>改进应用稳定性（例如可选的本地诊断日志，仅保存在本机）。</li>
+      </ul>
+      <p>我们不会将你的骑行轨迹、照片或录音用于广告画像。</p>
+
+      <h2>3. 存储与传输</h2>
+      <p>骑行数据、媒体文件默认存储在你的设备本地（应用沙盒）。除非你主动使用系统分享功能把内容发送给第三方应用或服务，否则日行不会把这些内容上传到我们的服务器。</p>
+      <p>当前版本不提供云同步账号。若未来增加联网服务，我们会更新本政策并再次告知。</p>
+
+      <h2>4. 权限说明</h2>
+      <ul>
+        <li><strong>定位</strong>：记录轨迹；后台/锁屏记录需要「始终」权限与精确位置。</li>
+        <li><strong>相机 / 麦克风</strong>：仅在你拍照或录音时使用。</li>
+        <li><strong>相册写入</strong>：仅在你选择保存/分享导出内容时可能请求。</li>
+        <li><strong>后台音频</strong>：用于语音教练播报及骑行中的必要保活，可在设置中关闭语音教练。</li>
+      </ul>
+      <p>你可随时在系统设置中撤回权限；撤回后相关功能将不可用或受限。</p>
+
+      <h2>5. 数据控制与删除</h2>
+      <p>你可以在应用内查看并删除行程记录。卸载应用通常会删除应用沙盒内的本地数据。通过系统分享出去的文件，由接收方应用按其自身政策处理。</p>
+
+      <h2>6. 儿童隐私</h2>
+      <p>本应用不以儿童为主要服务对象。若你是监护人并认为我们误处理了儿童信息，请通过下方方式联系我们。</p>
+
+      <h2>7. 政策更新</h2>
+      <p>我们可能适时更新本政策。重大变更会通过应用内提示或其他合理方式告知。继续使用即表示你知悉更新后的政策。</p>
+
+      <h2>8. 联系我们</h2>
+      <p>如对本隐私政策有疑问，请通过 App Store 产品页的开发者联系方式与我们联系。</p>
+    </article>
+
+    <article id="en" lang="en" hidden>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: September 2, 2026 · For <span class="brand">Waynote</span> (日行)</p>
+
+      <p>Welcome to Waynote. We respect your privacy. This policy explains how the app collects, uses, and stores information related to you. Waynote is built around on-device ride logging and does not require an account by default.</p>
+
+      <h2>1. Information We Process</h2>
+      <p>When you use related features, the app may process the following information locally on your device:</p>
+      <ul>
+        <li><strong>Location</strong>: to record ride tracks, show the map, and continue logging in the background when you grant Always location access.</li>
+        <li><strong>Camera &amp; photos</strong>: to capture photos during a ride; photos are stored in the app sandbox.</li>
+        <li><strong>Microphone &amp; audio</strong>: for press-to-talk recordings stored on device.</li>
+        <li><strong>Ride &amp; motion data</strong>: track points, distance, duration, altitude, exported videos, and similar data stored on device.</li>
+        <li><strong>Preferences</strong>: map style, language, voice coach settings, and similar options stored on device.</li>
+      </ul>
+
+      <h2>2. How We Use Information</h2>
+      <ul>
+        <li>to provide ride recording, maps, voice coaching, and ride review;</li>
+        <li>to generate and share ride videos when you choose to;</li>
+        <li>to help diagnose stability issues (optional local diagnostic logs stay on device).</li>
+      </ul>
+      <p>We do not use your tracks, photos, or recordings for advertising profiles.</p>
+
+      <h2>3. Storage &amp; Transfer</h2>
+      <p>Ride data and media are stored locally in the app sandbox by default. Waynote does not upload this content to our servers unless you actively share it through the system share sheet to another app or service.</p>
+      <p>This version does not offer cloud sync accounts. If we add online services later, we will update this policy and notify you.</p>
+
+      <h2>4. Permissions</h2>
+      <ul>
+        <li><strong>Location</strong>: for track recording; Always access and Precise Location help keep logging accurate while locked or backgrounded.</li>
+        <li><strong>Camera / Microphone</strong>: only when you take photos or record audio.</li>
+        <li><strong>Photo Library (add)</strong>: only if you choose to save or share exported content.</li>
+        <li><strong>Background audio</strong>: for voice coach prompts and related keep-alive during rides; you can turn voice coach off in Settings.</li>
+      </ul>
+      <p>You can revoke permissions in iOS Settings at any time; related features may stop working.</p>
+
+      <h2>5. Your Controls &amp; Deletion</h2>
+      <p>You can review and delete rides in the app. Uninstalling the app typically removes sandbox data. Content you shared elsewhere is governed by the receiving app’s policies.</p>
+
+      <h2>6. Children</h2>
+      <p>Waynote is not directed at children. If you are a parent or guardian and believe information about a child was processed in error, contact us using the details below.</p>
+
+      <h2>7. Changes</h2>
+      <p>We may update this policy from time to time. Material changes will be communicated in-app or by other reasonable means. Continued use means you acknowledge the updated policy.</p>
+
+      <h2>8. Contact</h2>
+      <p>For questions about this privacy policy, contact us through the developer contact options on the App Store product page.</p>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      var btnZh = document.getElementById("btn-zh");
+      var btnEn = document.getElementById("btn-en");
+
+      function setLang(raw) {
+        var lang = String(raw || "zh-Hans").toLowerCase();
+        var useZh = lang.indexOf("zh") === 0;
+        var zh = document.getElementById("zh");
+        var en = document.getElementById("en");
+        if (zh) zh.hidden = !useZh;
+        if (en) en.hidden = useZh;
+        document.documentElement.lang = useZh ? "zh-Hans" : "en";
+        document.title = useZh ? "隐私政策" : "Privacy Policy";
+        if (btnZh) btnZh.setAttribute("aria-pressed", useZh ? "true" : "false");
+        if (btnEn) btnEn.setAttribute("aria-pressed", useZh ? "false" : "true");
+        try {
+          history.replaceState(null, "", "#" + (useZh ? "zh-Hans" : "en"));
+        } catch (e) {}
+      }
+
+      window.__setPrivacyLang = setLang;
+
+      if (btnZh) btnZh.addEventListener("click", function () { setLang("zh-Hans"); });
+      if (btnEn) btnEn.addEventListener("click", function () { setLang("en"); });
+
+      var fromHash = (location.hash || "").replace(/^#/, "");
+      var fromQuery = new URLSearchParams(location.search).get("lang");
+      setLang(fromHash || fromQuery || "zh-Hans");
+    })();
+  </script>
+</body>
+</html>
