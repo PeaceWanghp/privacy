@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Privacy Policy</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #ffffff;
+            --text: #1c1c1e;
+            --muted: #6e6e73;
+            --track: rgba(120, 120, 128, 0.16);
+            --selected: #ffffff;
+            --selected-text: #1c1c1e;
+            --unselected-text: #1c1c1e;
+            --bar: rgba(255, 255, 255, 0.92);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000000;
+                --text: #f2f2f7;
+                --muted: #aeaeb2;
+                --track: rgba(118, 118, 128, 0.24);
+                --selected: #636366;
+                --selected-text: #ffffff;
+                --unselected-text: #ffffff;
+                --bar: rgba(0, 0, 0, 0.92);
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .bar {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            padding: 12px 18px 10px;
+            background: var(--bar);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .segment {
+            display: flex;
+            padding: 2px;
+            border-radius: 9px;
+            background: var(--track);
+        }
+        .segment button {
+            flex: 1;
+            border: 0;
+            margin: 0;
+            padding: 6px 8px;
+            border-radius: 7px;
+            background: transparent;
+            color: var(--unselected-text);
+            font: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .segment button[aria-selected="true"] {
+            background: var(--selected);
+            color: var(--selected-text);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        main { padding: 8px 18px 40px; }
+        h1 { font-size: 24px; margin: 0 0 8px; }
+        h2 { font-size: 18px; margin: 28px 0 8px; }
+        p, li { margin: 0 0 10px; }
+        .muted { color: var(--muted); font-size: 14px; }
+        [data-lang] { display: none; }
+        body.lang-en [data-lang="en"],
+        body.lang-zh [data-lang="zh"] { display: block; }
+        body.lang-en li[data-lang="en"],
+        body.lang-zh li[data-lang="zh"] { display: list-item; }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <div class="segment" role="tablist">
+            <button type="button" id="tab-en" role="tab" aria-selected="true">English</button>
+            <button type="button" id="tab-zh" role="tab" aria-selected="false">中文</button>
+        </div>
+    </div>
+    <main>
+        <h1 data-lang="en">Privacy Policy</h1>
+        <h1 data-lang="zh">隐私政策</h1>
+        <p class="muted" data-lang="en">Updated September 20, 2026</p>
+        <p class="muted" data-lang="zh">更新日期：2026年9月20日</p>
+        <p data-lang="en">Video Lineup respects your privacy. This policy explains how information is handled when you use the app.</p>
+        <p data-lang="zh">视频排播重视你的隐私。本政策说明我们如何处理你在使用本应用时的信息。</p>
+
+        <h2 data-lang="en">Information we process</h2>
+        <h2 data-lang="zh">我们处理的信息</h2>
+        <ul>
+            <li data-lang="en">Videos you import from Photos, plus video queue names, sort order, play counts, and next-round countdown settings. By default these stay on your device.</li>
+            <li data-lang="zh">你从相册「导入」的视频，以及视频队列的名称、排序、播放次数和下一轮倒计时设置。这些内容默认只保存在你的设备上。</li>
+            <li data-lang="en">When you use iCloud Sync in Settings, that video queue data and those videos are uploaded to your own iCloud storage so they can sync across your devices.</li>
+            <li data-lang="zh">当你在「设置」中使用「iCloud 同步」时，上述视频队列数据和视频会上传到你自己的 iCloud 空间，用于在你的设备之间同步。</li>
+            <li data-lang="en">VIP subscription status is handled by Apple. We do not collect or store your payment account, card, or billing address.</li>
+            <li data-lang="zh">VIP 订阅状态由 Apple 处理。我们不收集、不保存你的支付账号、银行卡或账单地址。</li>
+        </ul>
+
+        <h2 data-lang="en">Permissions</h2>
+        <h2 data-lang="zh">权限</h2>
+        <p data-lang="en">Photo library access is requested only when you import videos into a video queue. You can turn that permission off in the system Settings app at any time.</p>
+        <p data-lang="zh">只有在你向视频队列「导入」视频时，应用才会请求相册访问权限。你可以在系统的「设置」中随时关闭该权限。</p>
+
+        <h2 data-lang="en">What we do not do</h2>
+        <h2 data-lang="zh">我们不会做的事</h2>
+        <p data-lang="en">We do not sell your personal information, and we do not use your videos for advertising. Until you use iCloud Sync, videos do not leave this device.</p>
+        <p data-lang="zh">我们不会出售你的个人信息，也不会把你的视频用于广告画像。在你使用「iCloud 同步」之前，视频不会离开这台设备。</p>
+
+        <h2 data-lang="en">Your choices</h2>
+        <h2 data-lang="zh">你的选择</h2>
+        <p data-lang="en">Deleting a video queue or a video also deletes the related local file. After you sync, files already in iCloud can be managed in the system iCloud settings. VIP renews automatically each month and can be canceled in your Apple ID subscriptions.</p>
+        <p data-lang="zh">删除视频队列或单个视频时，对应的本地文件会一并删除。完成同步后，已在 iCloud 中的文件可在系统的 iCloud 设置中自行管理。VIP 为自动续期的连续包月，可在 Apple 账户的订阅中取消。</p>
+
+        <h2 data-lang="en">Contact</h2>
+        <h2 data-lang="zh">联系我们</h2>
+        <p data-lang="en">If you have questions about this Privacy Policy or Video Lineup, please email us at <a href="mailto:heping.wang@icloud.com">heping.wang@icloud.com</a>.</p>
+        <p data-lang="zh">如对本隐私政策或「视频排播」有任何疑问，请发送邮件至 <a href="mailto:heping.wang@icloud.com">heping.wang@icloud.com</a> 与我们联系。</p>
+    </main>
+    <script>
+        function setLanguage(lang) {
+            document.body.classList.toggle("lang-en", lang === "en");
+            document.body.classList.toggle("lang-zh", lang === "zh");
+            document.documentElement.lang = lang === "zh" ? "zh-Hans" : "en";
+            document.getElementById("tab-en").setAttribute("aria-selected", lang === "en" ? "true" : "false");
+            document.getElementById("tab-zh").setAttribute("aria-selected", lang === "zh" ? "true" : "false");
+            document.title = lang === "zh" ? "隐私政策" : "Privacy Policy";
+        }
+        document.getElementById("tab-en").addEventListener("click", function () { setLanguage("en"); });
+        document.getElementById("tab-zh").addEventListener("click", function () { setLanguage("zh"); });
+        var initial = (navigator.language || "").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+        setLanguage(initial);
+    </script>
+</body>
+</html>
