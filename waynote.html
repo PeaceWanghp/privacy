@@ -12,9 +12,10 @@
       --accent: #1ab87a;
       --rule: rgba(60, 60, 67, 0.16);
       --bg: #ffffff;
-      --segment-track: rgba(120, 120, 128, 0.16);
-      --segment-thumb: #ffffff;
-      --segment-thumb-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.04);
+      --switch-track: rgba(120, 120, 128, 0.22);
+      --switch-thumb: #ffffff;
+      --switch-thumb-shadow: 0 1px 3px rgba(0, 0, 0, 0.18), 0 1px 1px rgba(0, 0, 0, 0.06);
+      --switch-chrome: color-mix(in srgb, var(--bg) 78%, transparent);
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -22,9 +23,10 @@
         --secondary: #98989f;
         --rule: rgba(84, 84, 88, 0.55);
         --bg: #000000;
-        --segment-track: rgba(120, 120, 128, 0.32);
-        --segment-thumb: #636366;
-        --segment-thumb-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+        --switch-track: rgba(120, 120, 128, 0.38);
+        --switch-thumb: #636366;
+        --switch-thumb-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        --switch-chrome: color-mix(in srgb, var(--bg) 72%, transparent);
       }
     }
     * { box-sizing: border-box; }
@@ -38,45 +40,63 @@
       line-height: 1.55;
       -webkit-text-size-adjust: 100%;
     }
-    .lang-bar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      padding: 12px 18px 10px;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule);
-    }
-    .lang-segment {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      width: min(100%, 280px);
-      padding: 2px;
-      border-radius: 9px;
-      background: var(--segment-track);
-      gap: 0;
-    }
-    .lang-segment button {
+    .lang-switch {
+      position: fixed;
+      top: max(10px, env(safe-area-inset-top, 0px));
+      right: max(12px, env(safe-area-inset-right, 0px));
+      z-index: 20;
       appearance: none;
       border: 0;
       margin: 0;
-      padding: 7px 12px;
-      border-radius: 7px;
-      font: inherit;
-      font-size: 0.88rem;
-      font-weight: 600;
-      line-height: 1.2;
-      color: var(--text);
-      background: transparent;
+      padding: 4px;
+      border-radius: 999px;
+      background: var(--switch-chrome);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
       cursor: pointer;
-      transition: background 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
     }
-    .lang-segment button[aria-pressed="true"] {
-      background: var(--segment-thumb);
-      box-shadow: var(--segment-thumb-shadow);
+    .lang-switch-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      width: 72px;
+      height: 30px;
+      padding: 2px;
+      border-radius: 999px;
+      background: var(--switch-track);
+    }
+    .lang-switch-track::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(50% - 2px);
+      height: calc(100% - 4px);
+      border-radius: 999px;
+      background: var(--switch-thumb);
+      box-shadow: var(--switch-thumb-shadow);
+      transition: transform 0.2s ease;
+    }
+    .lang-switch[aria-checked="false"] .lang-switch-track::before {
+      transform: translateX(100%);
+    }
+    .lang-switch-label {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: var(--secondary);
+      transition: color 0.15s ease;
+      user-select: none;
+    }
+    .lang-switch[aria-checked="true"] .lang-switch-label.zh,
+    .lang-switch[aria-checked="false"] .lang-switch-label.en {
       color: var(--text);
     }
     main {
@@ -89,6 +109,7 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       margin: 0 0 8px;
+      padding-right: 92px;
     }
     .meta {
       color: var(--secondary);
@@ -118,12 +139,19 @@
   </style>
 </head>
 <body>
-  <div class="lang-bar">
-    <div class="lang-segment" role="tablist" aria-label="Language">
-      <button type="button" id="btn-zh" role="tab" data-lang="zh-Hans">中文</button>
-      <button type="button" id="btn-en" role="tab" data-lang="en">English</button>
-    </div>
-  </div>
+  <button
+    type="button"
+    class="lang-switch"
+    id="lang-switch"
+    role="switch"
+    aria-checked="true"
+    aria-label="Language"
+  >
+    <span class="lang-switch-track">
+      <span class="lang-switch-label zh">中</span>
+      <span class="lang-switch-label en">EN</span>
+    </span>
+  </button>
 
   <main>
     <article id="zh" lang="zh-Hans" hidden>
@@ -273,8 +301,7 @@
 
   <script>
     (function () {
-      var btnZh = document.getElementById("btn-zh");
-      var btnEn = document.getElementById("btn-en");
+      var langSwitch = document.getElementById("lang-switch");
 
       function setLang(raw) {
         var lang = String(raw || "zh-Hans").toLowerCase();
@@ -285,8 +312,10 @@
         if (en) en.hidden = useZh;
         document.documentElement.lang = useZh ? "zh-Hans" : "en";
         document.title = useZh ? "隐私政策" : "Privacy Policy";
-        if (btnZh) btnZh.setAttribute("aria-pressed", useZh ? "true" : "false");
-        if (btnEn) btnEn.setAttribute("aria-pressed", useZh ? "false" : "true");
+        if (langSwitch) {
+          langSwitch.setAttribute("aria-checked", useZh ? "true" : "false");
+          langSwitch.setAttribute("aria-label", useZh ? "语言：中文" : "Language: English");
+        }
         try {
           history.replaceState(null, "", "#" + (useZh ? "zh-Hans" : "en"));
         } catch (e) {}
@@ -294,8 +323,12 @@
 
       window.__setPrivacyLang = setLang;
 
-      if (btnZh) btnZh.addEventListener("click", function () { setLang("zh-Hans"); });
-      if (btnEn) btnEn.addEventListener("click", function () { setLang("en"); });
+      if (langSwitch) {
+        langSwitch.addEventListener("click", function () {
+          var isZh = langSwitch.getAttribute("aria-checked") === "true";
+          setLang(isZh ? "en" : "zh-Hans");
+        });
+      }
 
       var fromHash = (location.hash || "").replace(/^#/, "");
       var fromQuery = new URLSearchParams(location.search).get("lang");
