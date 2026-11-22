@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <title>Privacy Policy · Days</title>
+  <style>
+    :root {
+      --ink: #1f292e;
+      --muted: #6b7578;
+      --accent: #2e737a;
+      --line: rgba(31, 41, 46, 0.1);
+      --chip-bg: rgba(46, 115, 122, 0.1);
+      --chip-border: rgba(46, 115, 122, 0.28);
+      --page: #f7f8f8;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      min-height: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* 顶栏起始空白由 App 侧 scroll contentInset 处理；底边不再叠 safe-area，避免大块留白 */
+    body {
+      position: relative;
+      padding: 20px 20px 24px;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 100;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      width: 84px;
+      height: 34px;
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid var(--chip-border);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 6px 18px rgba(31, 41, 46, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .lang-switch::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: calc(50% - 3px);
+      height: calc(100% - 6px);
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 1px 4px rgba(46, 115, 122, 0.35);
+      transition: transform 0.22s ease;
+      pointer-events: none;
+    }
+
+    .lang-switch[data-lang="zh"]::before {
+      transform: translateX(100%);
+    }
+
+    .lang-opt {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.18s ease;
+    }
+
+    .lang-switch[data-lang="en"] .lang-opt[data-lang="en"],
+    .lang-switch[data-lang="zh"] .lang-opt[data-lang="zh"] {
+      color: #fff;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-top: 28px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px 18px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    p { margin: 0 0 10px; color: var(--ink); }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0 0 10px;
+      padding-left: 1.15em;
+    }
+
+    ul:last-child { margin-bottom: 0; }
+
+    li { margin: 0 0 6px; }
+    li:last-child { margin-bottom: 0; }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .footnote {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    .wrap > :last-child {
+      margin-bottom: 0;
+    }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="lang-switch" id="langSwitch" data-lang="en" role="switch" aria-checked="false" aria-label="EN / 中">
+    <button type="button" class="lang-opt" data-lang="en" aria-label="English">EN</button>
+    <button type="button" class="lang-opt" data-lang="zh" aria-label="中文">中</button>
+  </div>
+
+  <div class="wrap">
+    <article id="en" lang="en">
+      <header class="hero">
+        <h1>Privacy Policy</h1>
+        <p class="meta">Days (「提醒日」) · Effective date: November 22, 2026</p>
+        <span class="badge">Paid download · No developer account required</span>
+      </header>
+
+      <section>
+        <h2>1. Introduction</h2>
+        <p>This Privacy Policy explains how Days (“we”, “us”, or “the App”) handles information when you use the iOS app Days (Chinese name: 提醒日).</p>
+        <p>Days is distributed on the Apple App Store as a <strong>paid download</strong>. After purchase, you can use the App’s features without creating an account with us. We do not operate a developer-hosted user database, and we do not sell personal data.</p>
+        <p>By using Days, you agree to this Privacy Policy. If you do not agree, please do not use the App.</p>
+      </section>
+
+      <section>
+        <h2>2. Who We Are &amp; Contact</h2>
+        <p>Developer / data controller contact for privacy questions:</p>
+        <p><a href="mailto:heping.wang@icloud.com">heping.wang@icloud.com</a></p>
+        <p>You may also reach us through the developer contact information shown on the App Store product page.</p>
+      </section>
+
+      <section>
+        <h2>3. Information We Process</h2>
+        <p>Days is designed to keep your content on your device (and, if you choose, in your own iCloud). We do <strong>not</strong> collect personal profiles, browsing history, advertising identifiers, or analytics events on a developer server.</p>
+        <p>Information that may exist on your device because you use the App includes:</p>
+        <ul>
+          <li><strong>Reminder day content you enter</strong> — such as titles, notes, dates, recurrence rules, categories, pins, and related preferences.</li>
+          <li><strong>Media you attach</strong> — detail photos or images you take or pick, wallpapers you choose, and demo/export recordings you create.</li>
+          <li><strong>Reminder &amp; alarm preferences</strong> — local notification and AlarmKit settings you enable for specific days.</li>
+          <li><strong>App settings</strong> — language preference, wallpaper choices, default reminder time, and similar configuration stored locally.</li>
+          <li><strong>Optional iCloud backup copies</strong> — if you turn on iCloud Backup in Settings, a copy of eligible day data and related images may be stored in <em>your</em> iCloud container under your Apple ID.</li>
+        </ul>
+        <p>We do not require your name, email, phone number, or payment details inside the App. App Store purchase processing is handled by Apple under Apple’s terms and privacy policy.</p>
+      </section>
+
+      <section>
+        <h2>4. How Information Is Used</h2>
+        <p>Information stays under your control and is used only to provide App features on your device, for example:</p>
+        <ul>
+          <li>Showing countdowns / count-ups, lists, widgets, and detail pages.</li>
+          <li>Scheduling local notifications or alarms you configure.</li>
+          <li>Rendering images, wallpapers, and recordings you create or import.</li>
+          <li>Backing up or restoring data when you use the optional iCloud Backup feature.</li>
+        </ul>
+        <p>We do not use your content for advertising, profiling, or sale to third parties.</p>
+      </section>
+
+      <section>
+        <h2>5. Storage, Widget Sharing &amp; iCloud</h2>
+        <ul>
+          <li><strong>On-device storage</strong> — Day data and settings are stored locally by default.</li>
+          <li><strong>Home Screen widgets</strong> — Selected day information may be shared with the Days widget through the system App Group on the same device.</li>
+          <li><strong>Optional iCloud Backup</strong> — If enabled, data is written to your personal iCloud storage associated with your Apple ID. Access is governed by Apple’s iCloud service. We do not operate a separate cloud server that receives your backup.</li>
+        </ul>
+        <p>Uninstalling the App removes local App data on that device (subject to iOS behavior). iCloud copies, if any, remain under your Apple ID until you delete them or disable/remove the backup content.</p>
+      </section>
+
+      <section>
+        <h2>6. Permissions</h2>
+        <p>Days may request system permissions only when needed for features you use. You can deny or revoke them in iOS Settings.</p>
+        <ul>
+          <li><strong>Notifications</strong> — to deliver local reminders you schedule. Notifications are generated on your device.</li>
+          <li><strong>Alarms (AlarmKit)</strong> — to ring an alarm on or before an event day, including when Silent or Focus modes may silence ordinary alerts; you dismiss alarms manually.</li>
+          <li><strong>Photo Library</strong> — to let you choose photos for day details or backgrounds.</li>
+          <li><strong>Camera</strong> — to let you take photos for day details. Photos stay in the App unless you export or share them yourself.</li>
+          <li><strong>Microphone</strong> — only if you use demo/recording features that capture narration; audio is saved in the file you export and is not uploaded to us.</li>
+        </ul>
+        <p>Days does not request contacts, precise location, Health, or tracking permission for cross-app tracking.</p>
+      </section>
+
+      <section>
+        <h2>7. Analytics, Advertising &amp; Tracking</h2>
+        <p>Days does <strong>not</strong> include third-party analytics, advertising, or tracking SDKs. The App does not sell, rent, or share personal data for cross-app advertising. We do not use App Tracking Transparency to track you across other companies’ apps or websites.</p>
+      </section>
+
+      <section>
+        <h2>8. Third-Party Services</h2>
+        <p>Using Days involves Apple platforms and services (App Store, iOS permissions frameworks, optional iCloud, widgets). Those services are provided by Apple and governed by Apple’s terms and privacy policy. Apart from Apple’s system services required to run a paid App Store app and optional iCloud Backup, we do not send your day content to other companies’ servers.</p>
+      </section>
+
+      <section>
+        <h2>9. Data Retention</h2>
+        <p>Because content is stored on your device (and optionally in your iCloud), retention is primarily controlled by you. Delete days or media inside the App, clear wallpapers, turn off backup, delete iCloud copies, or uninstall the App as needed. We do not keep a separate developer-side copy of your reminder content.</p>
+      </section>
+
+      <section>
+        <h2>10. Children’s Privacy</h2>
+        <p>Days is a general-audience productivity utility and is not directed at children under 13 (or the equivalent minimum age in your jurisdiction). We do not knowingly collect personal information from children on a developer server. If you believe a child has provided information to us by email, contact us and we will take appropriate steps.</p>
+      </section>
+
+      <section>
+        <h2>11. International Users</h2>
+        <p>Your content processed by the App remains on your device and, if you enable iCloud Backup, in Apple iCloud infrastructure according to your Apple ID and Apple’s policies. We do not operate our own cross-border transfer of your reminder database.</p>
+      </section>
+
+      <section>
+        <h2>12. Your Choices &amp; Rights</h2>
+        <ul>
+          <li>Edit or delete day entries and attached media in the App.</li>
+          <li>Enable or disable notifications, alarms, camera, photos, and microphone access in iOS Settings.</li>
+          <li>Enable or disable iCloud Backup in the App’s Settings.</li>
+          <li>Contact us to ask questions about this Policy.</li>
+        </ul>
+        <p>Depending on where you live, you may have additional rights under local privacy laws. Because we do not host your day database on a developer server, many access/deletion requests are fulfilled by using the controls above on your own device and Apple ID.</p>
+      </section>
+
+      <section>
+        <h2>13. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. The “Effective date” at the top will change when we do. Continued use of Days after an update means you accept the revised Policy. Material changes may also be noted on the App Store product page when appropriate.</p>
+      </section>
+
+      <section>
+        <h2>14. Contact</h2>
+        <p>Questions about privacy or this Policy:</p>
+        <p><a href="mailto:heping.wang@icloud.com">heping.wang@icloud.com</a></p>
+      </section>
+
+      <p class="footnote">© 2026 Days (提醒日). Paid download on the App Store.</p>
+    </article>
+
+    <article id="zh" lang="zh-Hans" hidden>
+      <header class="hero">
+        <h1>隐私政策</h1>
+        <p class="meta">提醒日（Days）· 生效日期：2026 年 11 月 22 日</p>
+        <span class="badge">付费下载 · 无需注册开发者账号</span>
+      </header>
+
+      <section>
+        <h2>1. 引言</h2>
+        <p>本隐私政策说明您在使用 iOS 应用「提醒日」（英文名：Days，下称「本应用」或「我们」）时，相关信息如何被处理。</p>
+        <p>提醒日通过 Apple App Store 以<strong>付费下载</strong>方式分发。购买后即可使用本应用功能，无需在我们这里注册账号。我们不运营开发者自有的用户数据库，也不会出售您的个人数据。</p>
+        <p>使用本应用即表示您同意本隐私政策；如不同意，请勿使用本应用。</p>
+      </section>
+
+      <section>
+        <h2>2. 运营者与联系方式</h2>
+        <p>隐私相关问题请联系：</p>
+        <p><a href="mailto:heping.wang@icloud.com">heping.wang@icloud.com</a></p>
+        <p>您也可通过 App Store 产品页展示的开发者联系方式与我们沟通。</p>
+      </section>
+
+      <section>
+        <h2>3. 我们处理哪些信息</h2>
+        <p>提醒日的设计目标是将内容保存在您的设备上（若您选择开启，也可保存在您自己的 iCloud 中）。我们<strong>不会</strong>在开发者服务器上收集个人档案、浏览历史、广告标识符或分析事件。</p>
+        <p>因您使用本应用而可能保存在设备上的信息包括：</p>
+        <ul>
+          <li><strong>您自行录入的提醒日内容</strong>——例如标题、备注、日期、循环规则、分类、置顶及相关偏好。</li>
+          <li><strong>您附加的媒体</strong>——拍摄或选择的详情图片、壁纸，以及您制作的演示/导出录像等。</li>
+          <li><strong>提醒与闹钟偏好</strong>——您为特定日期开启的本地通知与 AlarmKit 闹钟设置。</li>
+          <li><strong>应用设置</strong>——语言偏好、壁纸选择、默认提醒时间等本地配置。</li>
+          <li><strong>可选的 iCloud 备份副本</strong>——若您在设置中开启「iCloud 备份」，符合条件的提醒日数据及相关图片可能写入与您 Apple ID 关联的个人 iCloud 容器。</li>
+        </ul>
+        <p>本应用内不要求填写姓名、电子邮箱、电话号码或支付信息。App Store 购买流程由 Apple 按其条款与隐私政策处理。</p>
+      </section>
+
+      <section>
+        <h2>4. 信息如何使用</h2>
+        <p>信息由您掌控，并仅用于在您的设备上提供应用功能，例如：</p>
+        <ul>
+          <li>展示倒计时/正计时、列表、小组件与详情页；</li>
+          <li>按您的配置调度本地通知或闹钟；</li>
+          <li>显示您导入或拍摄的图片、壁纸与录像；</li>
+          <li>在您使用可选的 iCloud 备份功能时进行备份或恢复。</li>
+        </ul>
+        <p>我们不会将您的内容用于广告、画像分析，或出售给第三方。</p>
+      </section>
+
+      <section>
+        <h2>5. 存储、小组件共享与 iCloud</h2>
+        <ul>
+          <li><strong>本地存储</strong>——提醒日数据与设置默认保存在本机。</li>
+          <li><strong>主屏幕小组件</strong>——部分提醒日信息可能通过系统 App Group 与同设备上的提醒日小组件共享。</li>
+          <li><strong>可选 iCloud 备份</strong>——开启后，数据写入与您 Apple ID 关联的个人 iCloud。访问受 Apple iCloud 服务约束。我们不运营单独接收您备份的云服务器。</li>
+        </ul>
+        <p>卸载本应用会删除该设备上的本地应用数据（以 iOS 实际行为为准）。若存在 iCloud 副本，则仍保留在您的 Apple ID 下，直至您删除或关闭/清理相关备份内容。</p>
+      </section>
+
+      <section>
+        <h2>6. 系统权限</h2>
+        <p>仅在您使用相关功能时，本应用可能申请系统权限。您可在 iOS「设置」中拒绝或随时撤回。</p>
+        <ul>
+          <li><strong>通知</strong>——用于送达您设置的本地提醒；通知在本机生成。</li>
+          <li><strong>闹钟（AlarmKit）</strong>——用于在纪念日当天或前一天响铃；即使静音或专注模式也可能需要闹钟能力，需您手动关闭。</li>
+          <li><strong>相册</strong>——用于为提醒日详情或背景选择照片。</li>
+          <li><strong>相机</strong>——用于拍摄提醒日详情配图；照片保存在本应用内，除非您自行导出或分享。</li>
+          <li><strong>麦克风</strong>——仅当您使用演示/录制功能采集旁白时需要；音频保存在您导出的文件中，不会上传给我们。</li>
+        </ul>
+        <p>本应用不申请通讯录、精确位置、健康数据，也不申请用于跨应用追踪的 Tracking 权限。</p>
+      </section>
+
+      <section>
+        <h2>7. 分析、广告与追踪</h2>
+        <p>提醒日<strong>不包含</strong>第三方统计分析、广告或追踪 SDK。本应用不会出售、出租或以跨应用广告为目的共享个人数据，也不会通过「App 跟踪透明度」在其他公司的应用或网站上追踪您。</p>
+      </section>
+
+      <section>
+        <h2>8. 第三方服务</h2>
+        <p>使用提醒日会涉及 Apple 平台与服务（App Store、iOS 权限框架、可选的 iCloud、小组件等），这些服务由 Apple 提供并适用 Apple 的条款与隐私政策。除运行付费 App Store 应用及可选 iCloud 备份所需的系统服务外，我们不会将您的提醒日内容发送到其他公司的服务器。</p>
+      </section>
+
+      <section>
+        <h2>9. 保存期限</h2>
+        <p>由于内容保存在您的设备（以及您可选的 iCloud）中，保存期限主要由您控制。您可在应用内删除提醒日或媒体、清除壁纸、关闭备份、删除 iCloud 副本或卸载应用。我们不会在开发者侧另行保存您的提醒日内容副本。</p>
+      </section>
+
+      <section>
+        <h2>10. 儿童隐私</h2>
+        <p>提醒日面向一般用户的效率工具，并非专门面向 13 岁以下儿童（或您所在司法辖区的同等最低年龄）。我们不会在开发者服务器上故意收集儿童的个人信息。若您认为儿童通过电子邮件向我们提供了信息，请联系我们，我们将采取适当措施。</p>
+      </section>
+
+      <section>
+        <h2>11. 跨境与国际用户</h2>
+        <p>本应用处理的内容保留在您的设备上；若开启 iCloud 备份，则按您的 Apple ID 与 Apple 政策存放于 Apple iCloud 基础设施。我们不运营自有的提醒日数据库跨境传输。</p>
+      </section>
+
+      <section>
+        <h2>12. 您的选择与权利</h2>
+        <ul>
+          <li>在应用内编辑或删除提醒日条目及附加媒体；</li>
+          <li>在 iOS「设置」中开启或关闭通知、闹钟、相机、相册与麦克风权限；</li>
+          <li>在应用「设置」中开启或关闭 iCloud 备份；</li>
+          <li>就本政策相关问题联系我们。</li>
+        </ul>
+        <p>视您所在地区，您可能享有当地隐私法律赋予的其他权利。由于我们不在开发者服务器托管您的提醒日数据库，许多访问/删除诉求可通过上述本机与 Apple ID 控制完成。</p>
+      </section>
+
+      <section>
+        <h2>13. 政策变更</h2>
+        <p>我们可能不时更新本隐私政策，届时将更新文首「生效日期」。更新后继续使用提醒日，即视为接受修订后的政策。重大变更也可能在适当情况下于 App Store 产品页说明。</p>
+      </section>
+
+      <section>
+        <h2>14. 联系我们</h2>
+        <p>如对本隐私政策有任何疑问，请发送邮件至：</p>
+        <p><a href="mailto:heping.wang@icloud.com">heping.wang@icloud.com</a></p>
+      </section>
+
+      <p class="footnote">© 2026 提醒日（Days）。于 App Store 付费下载。</p>
+    </article>
+  </div>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = "days.privacy.lang";
+      var en = document.getElementById("en");
+      var zh = document.getElementById("zh");
+      var switchEl = document.getElementById("langSwitch");
+
+      function normalize(lang) {
+        if (!lang) return "en";
+        lang = String(lang).toLowerCase();
+        if (lang.indexOf("zh") === 0) return "zh";
+        return "en";
+      }
+
+      function apply(lang) {
+        lang = normalize(lang);
+        var isZh = lang === "zh";
+        en.hidden = isZh;
+        zh.hidden = !isZh;
+        document.documentElement.lang = isZh ? "zh-Hans" : "en";
+        switchEl.setAttribute("data-lang", lang);
+        switchEl.setAttribute("aria-checked", isZh ? "true" : "false");
+        switchEl.setAttribute("aria-label", isZh ? "中 / EN" : "EN / 中");
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      }
+
+      function initialLang() {
+        try {
+          if (window.__DAYS_PRIVACY_LANG) return normalize(window.__DAYS_PRIVACY_LANG);
+        } catch (e) {}
+        try {
+          var params = new URLSearchParams(window.location.search || "");
+          var q = params.get("lang");
+          if (q) return normalize(q);
+        } catch (e) {}
+        try {
+          var saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) return normalize(saved);
+        } catch (e) {}
+        return normalize(navigator.language || "en");
+      }
+
+      window.setPrivacyLang = apply;
+      switchEl.addEventListener("click", function (event) {
+        var target = event.target.closest("[data-lang]");
+        if (target && target.classList.contains("lang-opt")) {
+          apply(target.getAttribute("data-lang"));
+          return;
+        }
+        apply(en.hidden ? "en" : "zh");
+      });
+      apply(initialLang());
+    })();
+  </script>
+</body>
+</html>
